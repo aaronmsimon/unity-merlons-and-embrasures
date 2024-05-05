@@ -44,5 +44,21 @@ namespace CodeMonkey.Grid
         {
             return gridObjectArray[gridPosition.x, gridPosition.z];
         }
+
+        public int Width
+        {
+            get
+            {
+                return this.width;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return this.height;
+            }
+        }
     }
 }
