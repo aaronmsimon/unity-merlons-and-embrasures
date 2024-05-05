@@ -1,4 +1,5 @@
 using UnityEngine;
+using CodeMonkey.Grid;
 
 namespace MandE.Grid
 {
@@ -17,15 +18,35 @@ namespace MandE.Grid
             {
                 IntitializeGridSystem();
             }
-
             return gridSystem;
         }
 
         public GridPosition GetGridPosition(Vector3 worldPosition) => gridSystem.GetGridPosition(worldPosition);
 
+        public Vector3 GetWorldPosition(GridPosition gridPosition)
+        {
+            return gridSystem.GetWorldPosition(gridPosition);
+        }
+
         public void IntitializeGridSystem()
         {
             gridSystem = new GridSystem(gridWidth, gridHeight, cellSize);
+        }
+
+        public int GridWidth
+        {
+            get
+            {
+                return this.gridWidth;
+            }
+        }
+
+        public int GridHeight
+        {
+            get
+            {
+                return this.gridHeight;
+            }
         }
     }
 }

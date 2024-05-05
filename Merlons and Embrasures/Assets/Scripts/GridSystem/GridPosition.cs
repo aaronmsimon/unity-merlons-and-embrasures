@@ -1,6 +1,6 @@
 using System;
 
-namespace MandE.Grid
+namespace CodeMonkey.Grid
 {
     public struct GridPosition : IEquatable<GridPosition>
     {

@@ -1,6 +1,7 @@
 using UnityEngine;
+using MandE.Grid;
 
-namespace MandE.Grid
+namespace CodeMonkey.Grid
 {
     public class GridSystem
     {
