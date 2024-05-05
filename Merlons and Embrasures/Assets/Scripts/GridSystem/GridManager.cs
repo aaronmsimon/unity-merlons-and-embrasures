@@ -9,12 +9,11 @@ namespace MandE.Grid
     {
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private Transform cellPrefab;
-        [SerializeField] private Material highlightMat;
         [SerializeField] private MouseWorld mouseWorld;
 
-        private Material originalMat;
+        [SerializeField] private Transform building;
+
         private GridSystem gridSystem;
-        private GridObject highlightedGridObject;
 
         private void Awake()
         {
@@ -32,22 +31,13 @@ namespace MandE.Grid
                     gridSystem.GetGridObject(gridPosition).CellTransform = Instantiate(cellPrefab, gridSystem.GetWorldPosition(gridPosition), Quaternion.identity);
                 }
             }
-
-            originalMat = cellPrefab.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-            Debug.Log("original mat: " + originalMat);
-            Debug.Log("highlight mat: " + highlightMat);
-            highlightedGridObject = gridSystem.GetGridObject(gridSystem.GetGridPosition(mouseWorld.Position));
         }
 
         private void Update()
         {
-            GridObject selectedGridObject = gridSystem.GetGridObject(gridSystem.GetGridPosition(mouseWorld.Position));
-            if (highlightedGridObject != selectedGridObject)
-            {
-                highlightedGridObject.CellTransform.GetComponentInChildren<MeshRenderer>().sharedMaterial = originalMat;
-                selectedGridObject.CellTransform.GetComponentInChildren<MeshRenderer>().sharedMaterial = highlightMat;
-                highlightedGridObject = selectedGridObject;
-            }
+            GridPosition gridPosition = gridSystem.GetGridPosition(mouseWorld.Position);
+            Vector3 worldPosition = gridSystem.GetWorldPosition(gridPosition);
+            building.position = worldPosition;
         }
     }
 }
