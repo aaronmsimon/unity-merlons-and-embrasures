@@ -459,8 +459,8 @@ MonoBehaviour:
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
   cellPrefab: {fileID: 1702751636961432242, guid: f6e362493fa36634a8130ca9071e9e7b,
     type: 3}
-  highlightMat: {fileID: 2100000, guid: 4930c6ffa5b9b9f4098249a43abf8506, type: 2}
   mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
+  building: {fileID: 1045371380}
 --- !u!4 &938401248
 Transform:
   m_ObjectHideFlags: 0
@@ -476,6 +476,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1045371380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1806100980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1489136464
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +527,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
+--- !u!1001 &1806100980
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912049307805369955, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+        type: 3}
+      propertyPath: m_Name
+      value: Building 1x1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 774280cad8bdc1f4daa2beb966bff8d3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -530,3 +604,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1489136465}
   - {fileID: 938401248}
+  - {fileID: 1806100980}

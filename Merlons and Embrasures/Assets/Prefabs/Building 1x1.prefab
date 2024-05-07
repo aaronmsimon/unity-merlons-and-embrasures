@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2912049307805369955}
+  - component: {fileID: 7902242220076297190}
   m_Layer: 0
   m_Name: Building 1x1
   m_TagString: Untagged
@@ -137,3 +138,17 @@ Transform:
   - {fileID: 2698067462319060636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7902242220076297190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960394167871890049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38bc34e32b7dad4e878bc573d8a0990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runtimeSet: {fileID: 11400000, guid: 58ad96ca6f6521a43b9201a931cf4e3e, type: 2}
+  id: 1
