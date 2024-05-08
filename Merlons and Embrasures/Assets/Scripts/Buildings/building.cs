@@ -4,7 +4,7 @@ namespace MandE.Buildings
 {
     public class Building : MonoBehaviour
     {
-        [SerializeField] LevelBuildingsRuntimeSet runtimeSet;
+        [SerializeField] BuildingsRuntimeSet runtimeSet;
 
         public int id;
 

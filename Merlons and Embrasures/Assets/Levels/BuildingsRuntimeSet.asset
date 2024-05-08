@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710d33e763a3f574fb2ef7374d6e8a37, type: 3}
-  m_Name: LevelBuildingsRuntimeSet01
+  m_Name: BuildingsRuntimeSet
   m_EditorClassIdentifier: 
   Items: []

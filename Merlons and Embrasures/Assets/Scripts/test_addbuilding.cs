@@ -6,7 +6,7 @@ namespace MandE.testing
     public class TestAddBuilding : MonoBehaviour
     {
         [SerializeField] private GameObject buildingPrefab;
-        [SerializeField] private LevelBuildingsRuntimeSet runtimeSet;
+        [SerializeField] private BuildingsRuntimeSet runtimeSet;
 
         public void AddBuilding()
         {
