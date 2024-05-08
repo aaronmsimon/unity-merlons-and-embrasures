@@ -9,7 +9,6 @@ namespace MandE.Grid
         private GridSystem gridSystem;
         private GridPosition gridPosition;
         private Building building;
-        private Transform cellTransform;
 
         public GridObject(GridSystem gridSystem, GridPosition gridPosition)
         {
@@ -17,15 +16,15 @@ namespace MandE.Grid
             this.gridPosition = gridPosition;
         }
 
-        public Transform CellTransform
+        public Building Building
         {
             get
             {
-                return cellTransform;
+                return building;
             }
             set
             {
-                cellTransform = value;
+                building = value;
             }
         }
     }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using CodeMonkey.Grid;
-using MandE.Player;
 
 namespace MandE.Grid
 {
@@ -8,7 +7,6 @@ namespace MandE.Grid
     {
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private Transform cellPrefab;
-        [SerializeField] private MouseWorld mouseWorld;
 
         private GridSystem gridSystem;
 
@@ -24,8 +22,7 @@ namespace MandE.Grid
                 for (int z = 0; z < gridSystem.Height; z++)
                 {
                     GridPosition gridPosition = new GridPosition(x, z);
-                    
-                    gridSystem.GetGridObject(gridPosition).CellTransform = Instantiate(cellPrefab, gridSystem.GetWorldPosition(gridPosition), Quaternion.identity);
+                    Instantiate(cellPrefab, gridSystem.GetWorldPosition(gridPosition), Quaternion.identity);
                 }
             }
         }

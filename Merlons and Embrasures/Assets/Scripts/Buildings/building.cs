@@ -1,12 +1,13 @@
 using UnityEngine;
+using CodeMonkey.Grid;
 
 namespace MandE.Buildings
 {
     public class Building : MonoBehaviour
     {
-        [SerializeField] BuildingsRuntimeSet runtimeSet;
-
-        public int id;
+        [SerializeField] private BuildingsRuntimeSet runtimeSet;
+        
+        private GridPosition gridPosition;
 
         private void OnEnable()
         {
