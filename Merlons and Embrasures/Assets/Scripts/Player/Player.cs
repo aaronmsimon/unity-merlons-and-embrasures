@@ -2,6 +2,7 @@ using UnityEngine;
 using CodeMonkey.Grid;
 using MandE.Grid;
 using UnityEngine.InputSystem;
+using MandE.Game;
 
 namespace MandE.Player
 {
@@ -10,6 +11,7 @@ namespace MandE.Player
         [SerializeField] private MouseWorld mouseWorld;
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private GameObject buildingPrefab;
+        [SerializeField] private Inventory building1x1Inventory;
 
         private PlayerControls playerControls;
 
@@ -49,10 +51,15 @@ namespace MandE.Player
         {
             if (context.performed)
             {
-                GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseWorld.Position);
-                Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
+                if (building1x1Inventory.ItemCount > 0)
+                {
+                    GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseWorld.Position);
+                    Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
 
-                Instantiate(buildingPrefab, worldPosition, Quaternion.identity);
+                    Instantiate(buildingPrefab, worldPosition, Quaternion.identity);
+
+                    building1x1Inventory.ChangeItemCount(-1);
+                }
             }
         }
     }

@@ -592,7 +592,6 @@ MonoBehaviour:
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
   cellPrefab: {fileID: 1702751636961432242, guid: f6e362493fa36634a8130ca9071e9e7b,
     type: 3}
-  mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
 --- !u!4 &938401248
 Transform:
   m_ObjectHideFlags: 0
@@ -890,6 +889,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
+  levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
+  buildingPrefab: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3,
+    type: 3}
 --- !u!1 &1725196306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,8 +1054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e9710ea179120479bce2e21d027f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3,
-    type: 3}
   runtimeSet: {fileID: 11400000, guid: 58ad96ca6f6521a43b9201a931cf4e3e, type: 2}
 --- !u!4 &1870867195
 Transform:
