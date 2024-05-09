@@ -7,6 +7,7 @@ namespace MandE.Game
     {
         [SerializeField] private string itemName;
         [SerializeField] private float itemCount;
+        [SerializeField] private GameObject prefab;
         
         public float ItemCount
         {
@@ -19,6 +20,14 @@ namespace MandE.Game
         public void ChangeItemCount(float amount)
         {
             itemCount += amount;
+        }
+
+        public GameObject Prefab
+        {
+            get
+            {
+                return prefab;
+            }
         }
     }
 }

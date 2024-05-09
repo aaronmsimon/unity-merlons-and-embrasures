@@ -10,7 +10,6 @@ namespace MandE.Player
     {
         [SerializeField] private MouseWorld mouseWorld;
         [SerializeField] private LevelGrid levelGrid;
-        [SerializeField] private GameObject buildingPrefab;
         [SerializeField] private Inventory building1x1Inventory;
 
         private PlayerControls playerControls;
@@ -56,7 +55,7 @@ namespace MandE.Player
                     GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseWorld.Position);
                     Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
 
-                    Instantiate(buildingPrefab, worldPosition, Quaternion.identity);
+                    Instantiate(building1x1Inventory.Prefab, worldPosition, Quaternion.identity);
 
                     building1x1Inventory.ChangeItemCount(-1);
                 }
