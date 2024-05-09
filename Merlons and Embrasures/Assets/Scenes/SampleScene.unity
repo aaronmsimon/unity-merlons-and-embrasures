@@ -889,9 +889,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
+  mousePlaneLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
-  buildingPrefab: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3,
-    type: 3}
+  building1x1Inventory: {fileID: 11400000, guid: f079dde59e831a04188187303fd97360,
+    type: 2}
 --- !u!1 &1725196306
 GameObject:
   m_ObjectHideFlags: 0

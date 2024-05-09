@@ -9,6 +9,7 @@ namespace MandE.Player
     public class Player : MonoBehaviour
     {
         [SerializeField] private MouseWorld mouseWorld;
+        [SerializeField] private LayerMask mousePlaneLayerMask;
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private Inventory building1x1Inventory;
 
@@ -48,7 +49,7 @@ namespace MandE.Player
 
         public void AddBuilding(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            if (context.performed && mouseWorld.HitMousePlane)
             {
                 if (building1x1Inventory.ItemCount > 0)
                 {

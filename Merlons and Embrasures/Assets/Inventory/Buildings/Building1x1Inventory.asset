@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2a0a8a304bcf44e95b2271cb609339, type: 3}
   m_Name: Building1x1Inventory
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Building 1x1
   itemCount: 0
+  prefab: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3, type: 3}

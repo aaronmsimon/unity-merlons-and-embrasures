@@ -8,13 +8,14 @@ namespace MandE.Player
         [SerializeField] private LayerMask mousePlaneLayerMask;
 
         private Vector3 position;
+        private bool hitMousePlane;
 
         public void UpdatePosition(Vector3 mousePosition)
         {
             // Set a ray from the screen to the mouse position
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             // Shoot a raycast infinite distance until it hits the ground layer only
-            Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, mousePlaneLayerMask);
+            hitMousePlane = Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, mousePlaneLayerMask);
             // Return the raycast point, which will be on the ground layer
             position = raycastHit.point;
         }
@@ -24,6 +25,14 @@ namespace MandE.Player
             get
             {
                 return this.position;
+            }
+        }
+
+        public bool HitMousePlane
+        {
+            get
+            {
+                return this.hitMousePlane;
             }
         }
     }
