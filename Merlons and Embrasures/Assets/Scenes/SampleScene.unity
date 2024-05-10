@@ -177,6 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingInventory: {fileID: 11400000, guid: 41cc38152b12305469e1bdc408eafdcc, type: 2}
   textBuildingCount: {fileID: 939921827}
+  buildingActiveInventory: {fileID: 11400000, guid: ee625db433213ea47ad6727ef5eb199e,
+    type: 2}
 --- !u!114 &47993889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +222,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 47993890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47993888}
+        m_TargetAssemblyTypeName: MandE.UI.BuildingUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &47993890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingInventory: {fileID: 11400000, guid: f079dde59e831a04188187303fd97360, type: 2}
   textBuildingCount: {fileID: 893855415}
+  buildingActiveInventory: {fileID: 11400000, guid: ee625db433213ea47ad6727ef5eb199e,
+    type: 2}
 --- !u!114 &1041004422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1033,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041004419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041004421}
+        m_TargetAssemblyTypeName: MandE.UI.BuildingUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1256378960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,8 +1337,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
-  building1x1Inventory: {fileID: 11400000, guid: f079dde59e831a04188187303fd97360,
-    type: 2}
+  buildingActiveInventory: {fileID: 0}
 --- !u!1 &1870867193
 GameObject:
   m_ObjectHideFlags: 0

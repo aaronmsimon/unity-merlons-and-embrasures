@@ -9,6 +9,7 @@ namespace MandE.UI
     {
         [SerializeField] private Inventory buildingInventory;
         [SerializeField] private TextMeshProUGUI textBuildingCount;
+        [SerializeField] private ActiveInventory buildingActiveInventory;
 
         private void Start()
         {
@@ -25,6 +26,11 @@ namespace MandE.UI
         private void OnItemCountChanged(object sender, EventArgs e)
         {
             UpdateBuildingCount();
+        }
+
+        public void OnClick()
+        {
+            buildingActiveInventory.SetActive(buildingInventory);
         }
     }
 }

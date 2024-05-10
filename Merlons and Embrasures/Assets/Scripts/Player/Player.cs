@@ -11,7 +11,7 @@ namespace MandE.Player
         [SerializeField] private MouseWorld mouseWorld;
         [SerializeField] private LayerMask mousePlaneLayerMask;
         [SerializeField] private LevelGrid levelGrid;
-        [SerializeField] private Inventory building1x1Inventory;
+        [SerializeField] private ActiveInventory buildingActiveInventory;
 
         private PlayerControls playerControls;
 
@@ -51,14 +51,14 @@ namespace MandE.Player
         {
             if (context.performed && mouseWorld.HitMousePlane)
             {
-                if (building1x1Inventory.ItemCount > 0)
+                if (buildingActiveInventory.CurrentActive.ItemCount > 0)
                 {
                     GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseWorld.Position);
                     Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
 
-                    Instantiate(building1x1Inventory.Prefab, worldPosition, Quaternion.identity);
+                    Instantiate(buildingActiveInventory.CurrentActive.Prefab, worldPosition, Quaternion.identity);
 
-                    building1x1Inventory.ChangeItemCount(-1);
+                    buildingActiveInventory.CurrentActive.ChangeItemCount(-1);
                 }
             }
         }
