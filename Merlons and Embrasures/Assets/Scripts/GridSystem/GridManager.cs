@@ -7,6 +7,7 @@ namespace MandE.Grid
     {
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private Transform cellPrefab;
+        [SerializeField] private Transform gridParent;
 
         private GridSystem gridSystem;
 
@@ -22,7 +23,8 @@ namespace MandE.Grid
                 for (int z = 0; z < gridSystem.Height; z++)
                 {
                     GridPosition gridPosition = new GridPosition(x, z);
-                    Instantiate(cellPrefab, gridSystem.GetWorldPosition(gridPosition), Quaternion.identity);
+                    Transform cell = Instantiate(cellPrefab, gridSystem.GetWorldPosition(gridPosition), Quaternion.identity);
+                    cell.parent = gridParent;
                 }
             }
         }

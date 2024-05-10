@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Building1x1Inventory
   m_EditorClassIdentifier: 
   itemName: Building 1x1
-  itemCount: 5
+  itemCount: 2
   prefab: {fileID: 4960394167871890049, guid: 774280cad8bdc1f4daa2beb966bff8d3, type: 3}

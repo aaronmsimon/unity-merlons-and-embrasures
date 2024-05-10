@@ -745,6 +745,7 @@ MonoBehaviour:
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
   cellPrefab: {fileID: 1702751636961432242, guid: f6e362493fa36634a8130ca9071e9e7b,
     type: 3}
+  gridParent: {fileID: 1129410981}
 --- !u!4 &938401248
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,6 +1047,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1129410980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1129410981}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1129410981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129410980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256378960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseBuildable: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
-  mouseUI: {fileID: 11400000, guid: a7f6c66fc3e5bb548b80386d9893fcb8, type: 2}
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
   buildingActiveInventory: {fileID: 11400000, guid: ee625db433213ea47ad6727ef5eb199e,
     type: 2}
@@ -1480,6 +1511,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1489136465}
   - {fileID: 938401248}
+  - {fileID: 1129410981}
   - {fileID: 2076459352}
   - {fileID: 1401671916}
   - {fileID: 1870867195}
