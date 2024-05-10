@@ -8,8 +8,7 @@ namespace MandE.Player
 {
     public class Player : MonoBehaviour
     {
-        [SerializeField] private MouseWorld mouseWorld;
-        [SerializeField] private LayerMask mousePlaneLayerMask;
+        [SerializeField] private MouseLayerMask mouseBuildable;
         [SerializeField] private LevelGrid levelGrid;
         [SerializeField] private ActiveInventory buildingActiveInventory;
 
@@ -24,7 +23,7 @@ namespace MandE.Player
         {
             playerControls.Enable();
 
-            playerControls.Gameplay.MouseClick.performed += AddBuilding;
+            playerControls.Gameplay.MouseClick.performed += OnMouseClick;
         }
 
         private void Update()
@@ -37,29 +36,34 @@ namespace MandE.Player
         {
             playerControls.Disable();
 
-            playerControls.Gameplay.MouseClick.performed -= AddBuilding;
+            playerControls.Gameplay.MouseClick.performed -= OnMouseClick;
         }
 
         private void UpdateMousePosition()
         {
             Vector2 mousePosition = playerControls.Gameplay.MousePosition.ReadValue<Vector2>();
 
-            mouseWorld.UpdatePosition(mousePosition);
+            mouseBuildable.UpdatePosition(mousePosition);
         }
 
-        public void AddBuilding(InputAction.CallbackContext context)
+        private void OnMouseClick(InputAction.CallbackContext context)
         {
-            if (context.performed && mouseWorld.HitMousePlane)
+            if (context.performed && mouseBuildable.HitLayerMask && !mouseBuildable.IsOverUI)
             {
-                if (buildingActiveInventory.CurrentActive.ItemCount > 0)
-                {
-                    GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseWorld.Position);
-                    Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
+                AddBuilding();
+            }
+        }
 
-                    Instantiate(buildingActiveInventory.CurrentActive.Prefab, worldPosition, Quaternion.identity);
+        private void AddBuilding()
+        {
+            if (buildingActiveInventory.CurrentActive.ItemCount > 0)
+            {
+                GridPosition gridPosition = levelGrid.GetGridSystem().GetGridPosition(mouseBuildable.Position);
+                Vector3 worldPosition = levelGrid.GetGridSystem().GetWorldPosition(gridPosition);
 
-                    buildingActiveInventory.CurrentActive.ChangeItemCount(-1);
-                }
+                Instantiate(buildingActiveInventory.CurrentActive.Prefab, worldPosition, Quaternion.identity);
+
+                buildingActiveInventory.CurrentActive.ChangeItemCount(-1);
             }
         }
     }

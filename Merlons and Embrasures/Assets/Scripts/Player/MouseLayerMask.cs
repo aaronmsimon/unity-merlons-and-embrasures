@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace MandE.Player
 {
@@ -9,6 +10,7 @@ namespace MandE.Player
 
         private Vector3 position;
         private bool hitLayerMask;
+        private bool isOverUI;
 
         public void UpdatePosition(Vector3 mousePosition)
         {
@@ -18,6 +20,8 @@ namespace MandE.Player
             hitLayerMask = Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask);
             // Return the raycast point, which will be on the ground layer
             position = raycastHit.point;
+
+            isOverUI = EventSystem.current.IsPointerOverGameObject();
         }
 
         public Vector3 Position
@@ -33,6 +37,14 @@ namespace MandE.Player
             get
             {
                 return this.hitLayerMask;
+            }
+        }
+
+        public bool IsOverUI
+        {
+            get
+            {
+                return isOverUI;
             }
         }
     }
