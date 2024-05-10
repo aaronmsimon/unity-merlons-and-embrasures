@@ -2,20 +2,20 @@ using UnityEngine;
 
 namespace MandE.Player
 {
-    [CreateAssetMenu(fileName = "New MouseWorld", menuName = "Scriptable Objects/Mouse World")]
-    public class MouseWorld : ScriptableObject
+    [CreateAssetMenu(fileName = "New Mouse LayerMask", menuName = "Scriptable Objects/Mouse LayerMask")]
+    public class MouseLayerMask : ScriptableObject
     {
-        [SerializeField] private LayerMask mousePlaneLayerMask;
+        [SerializeField] private LayerMask layerMask;
 
         private Vector3 position;
-        private bool hitMousePlane;
+        private bool hitLayerMask;
 
         public void UpdatePosition(Vector3 mousePosition)
         {
             // Set a ray from the screen to the mouse position
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             // Shoot a raycast infinite distance until it hits the ground layer only
-            hitMousePlane = Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, mousePlaneLayerMask);
+            hitLayerMask = Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask);
             // Return the raycast point, which will be on the ground layer
             position = raycastHit.point;
         }
@@ -28,11 +28,11 @@ namespace MandE.Player
             }
         }
 
-        public bool HitMousePlane
+        public bool HitLayerMask
         {
             get
             {
-                return this.hitMousePlane;
+                return this.hitLayerMask;
             }
         }
     }

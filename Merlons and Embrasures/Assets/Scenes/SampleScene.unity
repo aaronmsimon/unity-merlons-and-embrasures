@@ -1332,12 +1332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e07966bad82324584c15d7fb8fc2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseWorld: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
-  mousePlaneLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  mouseBuildable: {fileID: 11400000, guid: d0cca09586515c84babafcef0a4978a5, type: 2}
+  mouseUI: {fileID: 11400000, guid: a7f6c66fc3e5bb548b80386d9893fcb8, type: 2}
   levelGrid: {fileID: 11400000, guid: 15dabc64e46358b4a861fd8fe749617f, type: 2}
-  buildingActiveInventory: {fileID: 0}
+  buildingActiveInventory: {fileID: 11400000, guid: ee625db433213ea47ad6727ef5eb199e,
+    type: 2}
 --- !u!1 &1870867193
 GameObject:
   m_ObjectHideFlags: 0
