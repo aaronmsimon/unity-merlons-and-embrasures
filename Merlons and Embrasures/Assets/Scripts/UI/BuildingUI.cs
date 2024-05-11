@@ -13,19 +13,12 @@ namespace MandE.UI
 
         private void Start()
         {
-            buildingInventory.ItemCountChanged += OnItemCountChanged;
-
             UpdateBuildingCount();
         }
 
-        private void UpdateBuildingCount()
+        public void UpdateBuildingCount()
         {
             textBuildingCount.text = buildingInventory.ItemCount.ToString();
-        }
-
-        private void OnItemCountChanged(object sender, EventArgs e)
-        {
-            UpdateBuildingCount();
         }
 
         public void OnClick()

@@ -1,4 +1,5 @@
 using System;
+using RoboRyanTron.Unite2017.Events;
 using UnityEngine;
 
 namespace MandE.Game
@@ -6,12 +7,11 @@ namespace MandE.Game
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Objects/Inventory")]
     public class Inventory : ScriptableObject
     {
-        [SerializeField] private string itemName;
+        // [SerializeField] private string itemName; // is this needed?
         [SerializeField] private float itemCount;
         [SerializeField] private GameObject prefab;
+        [SerializeField] private GameEvent itemCountChanged;
 
-        public event EventHandler ItemCountChanged;
-        
         public float ItemCount
         {
             get
@@ -23,7 +23,7 @@ namespace MandE.Game
         public void ChangeItemCount(float amount)
         {
             itemCount += amount;
-            ItemCountChanged?.Invoke(this, EventArgs.Empty);
+            itemCountChanged.Raise();
         }
 
         public GameObject Prefab
